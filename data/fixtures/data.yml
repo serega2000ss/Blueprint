@@ -1,0 +1,14 @@
+sfGuardUser:
+  sfGuardUser_1:
+    first_name: null
+    last_name: null
+    email_address: admin@email.com
+    username: admin
+    algorithm: sha1
+    salt: d5b000310376ed1aef77e609286272df
+    password: 4eaeeba3e84d393f120e81a89f6f5853cae61a66
+    is_active: true
+    is_super_admin: true
+    last_login: null
+    created_at: '2011-09-20 15:40:16'
+    updated_at: '2011-09-20 15:40:44'

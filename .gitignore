@@ -1,5 +1,4 @@
 .idea
-.buildpath
 cache/*
 log/*
 config/databases.yml

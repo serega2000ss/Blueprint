@@ -3,12 +3,12 @@ cache/*
 log/*
 config/databases.yml
 
-#lib/model/doctrine/base/*
-#lib/form/doctrine/base/*
-#lib/filter/doctrine/base/*
-#lib/model/doctrine/*/base/*
-#lib/form/doctrine/*/base/*
-#lib/filter/doctrine/*/base/*
+lib/model/doctrine/base/*
+lib/form/doctrine/base/*
+lib/filter/doctrine/base/*
+lib/model/doctrine/*/base/*
+lib/form/doctrine/*/base/*
+lib/filter/doctrine/*/base/*
 
 data/sql/schema.sql
 

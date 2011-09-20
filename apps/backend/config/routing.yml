@@ -19,7 +19,7 @@ sf_guard_password:
 # default rules
 homepage:
   url:   /
-  param: { module: default, action: index }
+  param: { module: sfAdminDash, action: dashboard }
 
 # generic rules
 # please, remove them by adding more specific rules

@@ -14,3 +14,12 @@ all:
     logout:                       true
     login_route:                  @sf_guard_signin
     logout_route:                 @sf_guard_signout
+
+  sf_admin_dash:
+    categories:
+      Users:
+        items:
+          Users Management:
+            url:          users
+            image:        users.png
+            credentials:  [superadmin]

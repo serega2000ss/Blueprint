@@ -23,3 +23,9 @@ all:
             url:          users
             image:        users.png
             credentials:  [superadmin]
+
+  email_notification:
+    from_name: 'Blueprint project'
+    from_email: 'blueprint@project.org'
+    title: 'Registration notification'
+    message: "You have ben registered in Blueprint project.\n\rYour password is %password% \n\r"

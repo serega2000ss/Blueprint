@@ -19,5 +19,11 @@ class sfGuardUserAdminForm extends BasesfGuardUserAdminForm
           $this['groups_list'],
           $this['permissions_list']
         );
+
+        if($this->isNew()) {
+            $this->widgetSchema['send_email'] = new sfWidgetFormInputCheckbox();
+            $this->validatorSchema['send_email'] = new sfValidatorBoolean(array('required' => false));
+            $this->widgetSchema['send_email']->setLabel('Send email with credentials');
+        }
     }
 }

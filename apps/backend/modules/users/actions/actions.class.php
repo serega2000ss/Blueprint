@@ -13,4 +13,13 @@ require_once dirname(__FILE__).'/../lib/usersGeneratorHelper.class.php';
  */
 class usersActions extends autoUsersActions
 {
+
+/*
+    public function executeNew(sfWebRequest $request)
+    {
+        $this->form = $this->configuration->getForm();
+        $this->sf_guard_user = $this->form->getObject();
+    }
+*/
+
 }

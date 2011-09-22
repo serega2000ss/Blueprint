@@ -22,5 +22,8 @@ class RegistrationForm extends BasesfGuardUserAdminForm
           $this['groups_list'],
           $this['permissions_list']
         );
+
+        $this->widgetSchema['captcha'] = new sfWidgetCaptchaGD();
+        $this->validatorSchema['captcha'] = new sfCaptchaGDValidator(array('length' => 4));
     }
 }

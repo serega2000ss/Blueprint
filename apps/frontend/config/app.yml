@@ -2,4 +2,20 @@
 # http://www.symfony-project.org/reference/1_4/en/11-App
 
 # default values
-#all:
+all:
+
+  sf_captchagd:
+    image_width:                100
+    image_height:               30
+    chars:                      "123456789"
+    length:                     4
+    font_size:                  18
+    force_new_captcha:          true
+
+    # possible chars colors
+    font_color:                 ["252525", "8b8787", "550707", "3526E6", "88531E"]
+
+    # chars fonts
+    fonts:                      ["akbar/akbar.ttf", "brushcut/BRUSHCUT.TTF", "molten/molten.ttf", "planet_benson/Planetbe.ttf", "whoobub/WHOOBUB_.TTF"]
+    background_color:           DDDDDD
+    border_color:               000000

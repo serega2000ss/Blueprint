@@ -10,6 +10,7 @@
         <?php include_partial('registration/field', array('field' => $form['username'])) ?>
         <?php include_partial('registration/field', array('field' => $form['password'])) ?>
         <?php include_partial('registration/field', array('field' => $form['password_again'])) ?>
+        <?php include_partial('registration/captcha_field', array('field' => $form['captcha'])) ?>
     <dl>
 
 </fieldset>

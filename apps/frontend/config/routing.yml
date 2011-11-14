@@ -7,6 +7,16 @@ registration:
   url: /registration
   param: { module: registration, action: index }
 
+registration_proceed:
+  url: /registration_proceed
+  param: { module: registration, action: registrationProceed }
+
+registration_activate:
+  url: /registration/activate/:code
+  param: { module: registration, action: activate }
+
+
+
 # guard rules
 sf_guard_signin:
   url:   /login

@@ -19,3 +19,10 @@ all:
     fonts:                      ["akbar/akbar.ttf", "brushcut/BRUSHCUT.TTF", "molten/molten.ttf", "planet_benson/Planetbe.ttf", "whoobub/WHOOBUB_.TTF"]
     background_color:           DDDDDD
     border_color:               000000
+
+
+  email_notification:
+    from_name: 'Blueprint project'
+    from_email: 'blueprint@project.org'
+    title: 'Registration instructions'
+    message: "You have ben registered in Blueprint project.\n\rYour password is %password%\n\rPlease use this link to activate your accout - %activation_link%\n\r"

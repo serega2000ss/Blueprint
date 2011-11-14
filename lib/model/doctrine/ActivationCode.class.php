@@ -12,4 +12,5 @@
  */
 class ActivationCode extends BaseActivationCode
 {
+
 }

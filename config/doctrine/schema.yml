@@ -1,6 +1,6 @@
 ActivationCode:
   columns:
-    user_id:            { type: integer, notnull: true }
+    user_id:            { type: integer, notnull: true, unique: true }
     code:               { type: string(255), notnull: true }
   relations:
     sfGuardUser: { onDelete: CASCADE, local: user_id, foreign: id, foreignAlias: ActivationCode }

@@ -16,4 +16,14 @@ class sfGuardUserTable extends PluginsfGuardUserTable
     {
         return Doctrine_Core::getTable('sfGuardUser');
     }
+
+    public static function getUserByCode($code)
+    {
+        $q = Doctrine_Query::create()
+             ->select("user.*")
+             ->from("sfGuardUser user, ActivationCode code")
+             ->where("(user.id = code.user_id) AND (code.code = '$code')");
+
+        return $q->fetchOne();
+    }
 }

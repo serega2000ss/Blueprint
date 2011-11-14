@@ -26,4 +26,16 @@ class RegistrationForm extends BasesfGuardUserAdminForm
         $this->widgetSchema['captcha'] = new sfWidgetCaptchaGD();
         $this->validatorSchema['captcha'] = new sfCaptchaGDValidator(array('length' => 4));
     }
+
+    protected function doSave($con = null)
+    {
+        $this->getObject()->setIsActive(false);
+
+        parent::doSave($con);
+
+        $activation_code = new ActivationCode();
+        $activation_code->setUserId($this->getObject()->getId());
+        $activation_code->setCode(md5((string) time()));
+        $activation_code->save();
+    }
 }

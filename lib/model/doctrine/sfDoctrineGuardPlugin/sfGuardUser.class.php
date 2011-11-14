@@ -12,4 +12,22 @@
  */
 class sfGuardUser extends PluginsfGuardUser
 {
+    public function getActivationCode()
+    {
+        $doc_instance = ActivationCodeTable::getInstance();
+        $q = $doc_instance->createQuery('c')
+            ->where('c.user_id = ?', $this->getId());
+
+        return $q->fetchOne();
+    }
+
+    public function activateWithCode()
+    {
+        $this->setIsActive(true);
+        $this->save();
+
+        $code = $this->getActivationCode();
+        $code->delete();
+    }
+
 }

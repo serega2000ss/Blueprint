@@ -3,4 +3,27 @@ ActivationCode:
     user_id:            { type: integer, notnull: true, unique: true }
     code:               { type: string(255), notnull: true }
   relations:
-    sfGuardUser: { onDelete: CASCADE, local: user_id, foreign: id, foreignAlias: ActivationCode }
+    sfGuardUser:        { onDelete: CASCADE, local: user_id, foreign: id, foreignAlias: ActivationCode }
+
+
+ArticleCategory:
+  columns:
+    name:               { type: string(255), notnull: true }
+    title:              { type: string(255), notnull: true }
+    description:        { type: text, notnull: true }
+  actAs:
+    Timestampable: ~
+    I18n:
+      fields: [title, description]
+
+Article:
+  columns:
+    name:               { type: string(255), notnull: true }
+    title:              { type: string(255), notnull: true }
+    description:        { type: text, notnull: true }
+    content:            { type: text }
+  actAs:
+    Timestampable: ~
+    Taggable: ~
+    I18n:
+      fields: [title, description, content]

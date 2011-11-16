@@ -10,7 +10,8 @@
  */
 class CategoryTranslationForm extends BaseCategoryTranslationForm
 {
-  public function configure()
-  {
-  }
+    public function configure()
+    {
+        $this->widgetSchema['description'] = new sfWidgetFormTextarea(array(),array());
+    }
 }

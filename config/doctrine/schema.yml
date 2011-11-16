@@ -6,6 +6,11 @@ ActivationCode:
     sfGuardUser:        { onDelete: CASCADE, local: user_id, foreign: id, foreignAlias: ActivationCode }
 
 
+Language:
+  columns:
+    name:               { type: string(255), notnull: true }
+    is_active:          { type: boolean, default: true }
+
 Category:
   columns:
     name:               { type: string(255), notnull: true }

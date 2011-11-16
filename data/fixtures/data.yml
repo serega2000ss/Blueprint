@@ -1,3 +1,7 @@
+Language:
+  Language_1:
+    name: en
+    is_active: true
 sfGuardUser:
   sfGuardUser_1:
     first_name: null

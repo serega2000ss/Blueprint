@@ -1,3 +1,12 @@
+article:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Article
+    module:               article
+    prefix_path:          /article
+    column:               id
+    with_wildcard_routes: true
+
 language:
   class: sfDoctrineRouteCollection
   options:

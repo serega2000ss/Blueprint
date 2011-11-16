@@ -6,7 +6,7 @@ ActivationCode:
     sfGuardUser:        { onDelete: CASCADE, local: user_id, foreign: id, foreignAlias: ActivationCode }
 
 
-ArticleCategory:
+Category:
   columns:
     name:               { type: string(255), notnull: true }
     title:              { type: string(255), notnull: true }
@@ -27,3 +27,11 @@ Article:
     Taggable: ~
     I18n:
       fields: [title, description, content]
+
+ArticleCategory:
+  columns:
+    article_id:         { type: integer, notnull: true}
+    category_id:        { type: integer, notnull: true}
+  relations:
+    Article:            { onDelete: CASCADE, local: article_id, foreign: id, foreignAlias: Article }
+    Category:           { onDelete: CASCADE, local: category_id, foreign: id, foreignAlias: Category }

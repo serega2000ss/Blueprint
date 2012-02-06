@@ -13,5 +13,3 @@ lib/filter/doctrine/*/base/*
 data/sql/schema.sql
 
 web/uploads/*
-config/app.yml
-config/factories.yml

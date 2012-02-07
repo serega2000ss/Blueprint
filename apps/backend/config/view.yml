@@ -14,7 +14,7 @@ default:
 
   stylesheets:    [main.css]
 
-  javascripts:    []
+  javascripts:    ['/js/tiny_mce/plugins/tinybrowser/tb_tinymce.js.php']
 
   has_layout:     true
   layout:         layout

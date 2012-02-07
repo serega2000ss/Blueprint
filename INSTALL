@@ -1,0 +1,38 @@
+1. Clone from git
+
+git clone git@github.com:serega2000ss/Blueprint.git
+
+
+2. Add folders to root:
+ ./cache/
+ ./log/
+
+
+3. Go to config folder and create a file ./config/databases.yml
+
+----------------- Content: --------------
+
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/07-Databases
+
+all:
+  doctrine:
+    class: sfDoctrineDatabase
+      param:
+        dsn:  mysql:host=localhost;dbname=blueprint_db
+            username: root
+            password:
+            encoding: utf8
+            attributes:
+              DEFAULT_TABLE_TYPE: INNODB
+              DEFAULT_TABLE_CHARSET: utf8
+              DEFAULT_TABLE_COLLATE: utf8_general_ci
+
+---------------- End content -----------
+
+
+
+4. Build doctrine tables and classes
+
+php symfony doctrine:build --all
+php symfony doctrine:data-load

@@ -1,6 +1,12 @@
 # You can find more information about this file on the symfony website:
 # http://www.symfony-project.org/reference/1_4/en/10-Routing
+contact_us:
+   url: /contact_us
+   param: { module: contact_us, action: index }
 
+contact_approv:
+   url: /contact_approv
+   param: { module: contact_us, action: emailApprov }
 
 # registration rules
 registration:

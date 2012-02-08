@@ -26,3 +26,7 @@ all:
     from_email: 'blueprint@project.org'
     title: 'Registration instructions'
     message: "You have ben registered in Blueprint project.\n\rYour password is %password%\n\rPlease use this link to activate your accout - %activation_link%\n\r"
+
+  smtp:
+    host: "masterofcode.com"
+    port: 587

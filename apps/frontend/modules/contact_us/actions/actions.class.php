@@ -15,31 +15,42 @@ class contact_usActions extends sfActions
   *
   * @param sfRequest $request A request object
   */
-  public function executeIndex(sfWebRequest $request)
-  {
-      $this->form = new ContactUsForm();
+    public function executeIndex(sfWebRequest $request)
+    {
+        $this->form = new ContactUsForm();
 
-      if ($request->isMethod(sfRequest::POST)){
-          $this->form->bind($request->getParameter($this->form->getName()));
-          if ($this->form->isValid()){
-              $data = $request->getPostParameter($this->form->getName());
+        if ($request->isMethod(sfRequest::POST)){
+            $this->form->bind($request->getParameter($this->form->getName()));
+            if ($this->form->isValid()){
+                if($this->executeEmailSend($this->form))
+                {
+                    $this->getUser()->setFlash('notice', "Your post was successfully sent");
+                } else {
+                    $this->getUser()->setFlash('notice', "Sorry but your post was not sent");
+                }
+                $this->redirect('@contact_approv');
+            }
+        }
+    }
 
-              $result = Mailer::sendEmail(array($data['from']), ($data['name'] != '' ? $data['name'] : 'guest'), $data['subject'], $data['body'], '');
-              if($result)
-              {
-                  $this->getUser()->setFlash('notice', "Your post was successfully sent");
-              } else {
-                  $this->getUser()->setFlash('notice', "Sorry but your post was not sent");
-              }
+    protected function executeEmailSend(sfForm $form)
+    {
+        $message = $this->getMailer()->compose(
+            array($form->getValue('email_address') => ($form->getValue('username') != "" ? $form->getValue('username')  : sfConfig::get('app_contact_us_default_username', 'Guest'))),
+            array(sfConfig::get('app_email_notification_from_email', 'blueprint@admin.com') => sfConfig::get('app_email_notification_from_name', 'Blueprint')),
+            ($form->getValue('subject') != "" ? $form->getValue('subject')  : sfConfig::get('app_contact_us_default_subject', 'Contact Us Message')),
+            $form->getValue('message')
+        );
 
-              $this->redirect('@contact_approv');
-          }
-      }
-  }
+        try {
+            $this->getMailer()->send($message);
+            return true;
+        } catch (Exception $e) {
+            return false;
+        }
+    }
 
-  public function executeEmailApprov()
-  {
-
-  }
-
+    public function executeEmailApprov()
+    {
+    }
 }

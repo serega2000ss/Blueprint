@@ -26,3 +26,11 @@ all:
     from_email: 'blueprint@project.org'
     title: 'Registration instructions'
     message: "You have ben registered in Blueprint project.\n\rYour password is %password%\n\rPlease use this link to activate your accout - %activation_link%\n\r"
+
+  password_notification:
+    title: "Password change notification"
+    message: "You have successfully changed your password in Blueprint project.\n\rYour new password is: %password%\n\r"
+
+  contact_us_default:
+    username: 'Guest'
+    subject: 'Contact Us Message'

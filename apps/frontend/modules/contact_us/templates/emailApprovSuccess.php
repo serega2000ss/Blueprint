@@ -1,0 +1,1 @@
+<div> <?php echo $sf_user->getFlash('notice') ?> </div>

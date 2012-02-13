@@ -35,6 +35,10 @@ all:
     use_database:           true
 
     enabled_modules:      [default, sfGuardAuth, sfCaptchaGD]
+
+    login_module:           sfGuardAuth
+    login_action:           signin
+
     standard_helpers:     [Partial, Cache, I18N, Captcha]
     i18n:                 true
 

@@ -9,6 +9,19 @@
     <?php include_javascripts() ?>
   </head>
   <body>
-    <?php echo $sf_content ?>
+
+    <h1>Mega site</h1>
+
+    <div>
+        <?php echo $sf_content ?>
+    </div>
+
+    <div>
+        Login form:
+        <?php
+        include_component('home', 'loginform');
+        ?>
+    </div>
+
   </body>
 </html>

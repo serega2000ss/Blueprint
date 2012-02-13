@@ -41,4 +41,3 @@ all:
 
     standard_helpers:     [Partial, Cache, I18N, Captcha]
     i18n:                 true
-

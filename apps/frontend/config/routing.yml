@@ -2,6 +2,20 @@
 # http://www.symfony-project.org/reference/1_4/en/10-Routing
 
 
+#search
+search_advanced:
+  url: /:sf_culture/advanced
+  param: { module: sfLucene, action: advanced }
+
+search:
+  url: /:sf_culture/search
+  param: { module: sfLucene, action: index }
+
+#Article full view after search
+article_view:
+  url: /:sf_culture/article/:id
+  param: { module: article, action: index }
+
 # registration rules
 registration:
   url: /registration

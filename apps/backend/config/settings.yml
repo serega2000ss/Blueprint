@@ -35,6 +35,8 @@ all:
     use_database:           true
 
     enabled_modules:        [default, sfGuardGroup, sfGuardUser, sfGuardPermission, sfGuardAuth, sfAdminDash]
+    standard_helpers:       [Partial, Cache, I18N, Captcha]
+    i18n:                   true
 
 
     login_module:           sfGuardAuth

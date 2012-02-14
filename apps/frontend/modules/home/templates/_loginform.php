@@ -1,7 +1,8 @@
 <?php use_helper('I18N') ?>
 
+
 <?php
-    if(!$user_isAuthenticated):
+    if(!$user->isAuthenticated()):
 ?>
 <div id="loginform">
     <form action="<?php echo url_for('@sf_guard_signin') ?>" method="post">
@@ -13,11 +14,14 @@
         </p>
     </form>
 </div>
+
+
 <?php
     else:
 ?>
-        Hello, you are now logged in.
-        <a href="<?php echo url_for('@sf_guard_signout') ?>">logut</a>
+        Hello, <?php echo $user->getUsername(); ?>!
+        <a href="<?php echo url_for('@profile') ?>">profile</a>
+        <a href="<?php echo url_for('@sf_guard_signout') ?>">logout</a>
 <?php
     endif;
 ?>

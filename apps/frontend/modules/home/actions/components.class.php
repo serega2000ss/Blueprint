@@ -13,6 +13,6 @@
           //do something
           $class = sfConfig::get('app_sf_guard_plugin_signin_form', 'sfGuardFormSignin');
           $this->form = new $class();
-          $this->user_isAuthenticated = $this->getUser()->isAuthenticated();
+          $this->user = $this->getUser();
       }
   }

@@ -10,7 +10,7 @@
   </head>
   <body>
 
-    <h1>Mega site</h1>
+    <h1>Sample website</h1>
 
     <div>
         <?php echo $sf_content ?>
@@ -19,7 +19,7 @@
     <div>
         Login form:
         <?php
-        include_component('home', 'loginform');
+            include_component('home', 'loginform');
         ?>
     </div>
 

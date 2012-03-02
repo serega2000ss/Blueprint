@@ -32,6 +32,7 @@ Article:
     Taggable: ~
     I18n:
       fields: [title, description, content]
+    sfLuceneDoctrineTemplate: ~
 
 ArticleCategory:
   columns:

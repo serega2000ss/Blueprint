@@ -23,6 +23,7 @@ test:
     etag:                   false
 
 all:
+  default_culture:   ru
   .settings:
     # Form security secret (CSRF protection)
     csrf_secret:            0ef5c9ad624daeb8729f2fe03d5d63f2f0d87050
@@ -36,9 +37,10 @@ all:
 
     enabled_modules:      [default, sfGuardAuth, sfCaptchaGD]
 
-    login_module:           sfGuardAuth
-    login_action:           signin
+    login_module:         sfGuardAuth
+    login_action:         signin
 
     standard_helpers:     [Partial, Cache, I18N, Captcha]
 
     i18n:                 true
+    culture:              ru

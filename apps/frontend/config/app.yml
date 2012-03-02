@@ -34,3 +34,6 @@ all:
   contact_us_default:
     username: 'Guest'
     subject: 'Contact Us Message'
+
+  lucene:
+    routes: off

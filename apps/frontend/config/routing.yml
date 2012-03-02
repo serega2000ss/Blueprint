@@ -20,6 +20,20 @@ contact_approv:
    url: /contact_approv
    param: { module: contact_us, action: emailApprov }
 
+#search
+search_advanced:
+  url: /:sf_culture/advanced
+  param: { module: sfLucene, action: advanced }
+
+search:
+  url: /:sf_culture/search
+  param: { module: sfLucene, action: index }
+
+#Article full view after search
+article_view:
+  url: /:sf_culture/article/:id
+  param: { module: article, action: index }
+
 # registration rules
 registration:
   url: /registration
